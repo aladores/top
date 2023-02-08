@@ -1,0 +1,35 @@
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCars (20230130210324)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "cars" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "make" varchar, "model" varchar, "year" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230130210324"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (4.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-01-30 21:03:40.035098"], ["updated_at", "2023-01-30 21:03:40.035098"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cars" for ::1 at 2023-01-30 16:03:59 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CarsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (1.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.erb:6
+  Rendered cars/index.html.erb within layouts/application (Duration: 23.3ms | Allocations: 1653)
+  Rendered layout layouts/application.html.erb (Duration: 1138.3ms | Allocations: 94311)
+Completed 200 OK in 1374ms (Views: 1185.3ms | ActiveRecord: 1.9ms | Allocations: 99313)
+
+
+Started GET "/cars/new" for ::1 at 2023-01-30 16:04:03 -0500
+Processing by CarsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/_form.html.erb (Duration: 183.3ms | Allocations: 5149)
+  Rendered cars/new.html.erb within layouts/application (Duration: 191.6ms | Allocations: 5491)
+  Rendered layout layouts/application.html.erb (Duration: 237.8ms | Allocations: 7809)
+Completed 200 OK in 268ms (Views: 238.6ms | ActiveRecord: 5.5ms | Allocations: 12718)
+
+
