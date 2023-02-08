@@ -1,0 +1,53 @@
+//*********************Array method notes***********************//
+
+//*****.filter()*****//
+Creates a new array filled with elements that pass a test provided by a function. 
+
+EX. const inventors15 = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1599));
+
+
+//*****.map()*****//
+Creates a new array from calling a function and combining array elements
+
+EX.  const inventorsMap = inventors.map(inventors => (`${inventors.first} ${inventors.last}`));
+
+
+//*****.sort()*****//
+Compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.
+
+If the result is negative, a is sorted before b.
+
+If the result is positive, b is sorted before a
+
+If the result is 0, no changes are done with the sort order of the two values.
+
+EX. const inventorsSort = inventors.sort((a,b) => a.year > b.year ? 1 : -1);
+
+
+//*****.reduce()*****//
+Returns a reduced array element from a function 
+
+EX.   const inventorReduce = inventors.reduce((total,inventors) =>{
+      return total + ( inventors.passed - inventors.year);
+    },0);
+
+
+
+//*********************Arrow Function***********************//
+// 1. Remove the word "function" and place arrow between the argument and opening body bracket
+(a) => {
+  return a + 100;
+};
+
+// 2. Remove the body braces and word "return" — the return is implied.
+(a) => a + 100;
+
+// 3. Remove the parameter parentheses
+a => a + 100;
+
+EX. inventors => (`${inventors.first} ${inventors.last}`)
+
+
+//*********************Ternary Function***********************//
+		     //Condition //True //False
+EX. const beverage = age >= 21 ? "Beer" : "Juice";

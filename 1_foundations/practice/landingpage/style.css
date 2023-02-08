@@ -1,0 +1,178 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin:0;
+    font-family: Roboto, sans-serif;
+    min-height: 100vh;
+}
+
+.content{
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+}
+
+.header{
+    display: flex;
+    background-color: #1F2937;
+    justify-content: space-between;
+    padding:1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.header-logo{
+    font-size: 24px;
+    font-weight: 700;
+    color: #F9FAF8;
+
+}
+.header-links{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+ul {
+    list-style: none;
+    margin:0;
+    padding:1;
+}
+a {
+    text-decoration: none;
+    color:#F9FAF8;
+}
+
+.container {
+    display: flex;
+    background-color: #1F2937;
+    justify-content: center;
+    align-items: center;
+    gap:4rem;
+    color:#F9FAF8;
+    
+}
+
+.container button{
+    background-color:#3882F6;
+    padding: 6px 24px;
+    border-radius: 8px;
+    color:#F9FAF8;
+}
+
+.container-image{
+    width: 400px;
+    height: 200px;
+    background-color: grey;
+    text-align: center;
+    
+    
+}
+.container-header{
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.container-image,.container-text{
+    margin-top:4rem;
+    margin-bottom:4rem;
+}
+.container-text{
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    max-height: 200px;
+}
+
+/*SECOND CONTAINER*/
+.sec-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.items{
+    display: flex;
+    flex-direction: row;
+    gap:4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.item img{
+    min-height:150px;
+    min-width:150px;
+    border-radius: 5%;
+    border-style: solid;
+    border-color:#3882F6;
+}
+.item{
+    max-width: 150px;
+}
+
+.text{
+    margin-top: 0.5rem;
+}
+
+/*THIRD CONTAINER*/
+.third-container{
+    display: flex;
+    background-color: #E5E7EB;
+    justify-content: center;
+    padding: 3rem;
+}
+.third-main{
+    display: flex;
+    width:700px;
+    flex-wrap: wrap;
+}
+
+.quote{
+    font-size: 24px;
+    font-style: italic;
+}
+.author{
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    text-align: right;
+    margin:0;
+}
+
+/*FOURTH CONTAINER*/
+.fourth-container{
+    display: flex;
+    background-color: #3882F6;
+    color:white;
+    justify-content: center;
+    align-items: center;
+    margin:2rem;
+    gap:4rem;
+    border-radius: 5px;
+}
+
+.fourth-text{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.fourth-text h2,p{
+    margin: 0rem;
+}
+
+.fourth-button{
+    background-color:#3882F6;
+    padding: 6px 24px;
+    border-radius: 8px;
+    color:white;
+    border-style:solid;
+    border-color:white;
+}
+
+/*FOOTER*/
+.footer{
+    display: flex;
+    background-color: #1F2937;
+    color:white;
+    padding:1rem;
+    justify-content: center;
+}

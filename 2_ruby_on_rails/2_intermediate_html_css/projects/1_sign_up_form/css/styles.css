@@ -1,0 +1,150 @@
+:root {
+  --lightgrey: rgb(245, 245, 245);
+}
+
+body {
+  display: flex;
+  background-color: var(--lightgrey);
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+/************** SIDEBAR **************/
+.sidebar {
+  background-image: url(../images/plants.avif);
+  background-size: cover;
+  width: 850px;
+  min-height: 100vh;
+}
+
+.sidebar-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  margin-top: 150px;
+  padding: 15px 50px 15px 50px;
+}
+
+.odin-word-logo {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+}
+
+.odin-lined {
+  max-width: 100px;
+}
+
+/************** TOP  **************/
+.top-container {
+  padding: 150px 175px 75px 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/************** FORM  **************/
+
+.form-container {
+  padding: 25px 0px 25px 40px;
+  background-color: white;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+.form-row {
+  display: flex;
+  gap: 50px;
+  padding-top: 25px;
+}
+
+.form-header-input {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+input {
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 2px;
+  height: 23px;
+  width: 200px;
+}
+
+input:focus {
+  outline: none !important;
+  border-color: #0022ff;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+.red-border {
+  border-color: red;
+}
+
+.green-border {
+  border-color: #3cd33c;
+}
+
+.error-text {
+  font-size: 0.8rem;
+  color: red;
+}
+
+.smaller-text {
+  font-size: 0.7rem;
+  color: rgb(103, 103, 103);
+}
+
+/************** BOTTOM  **************/
+.bottom-container {
+  padding: 25px 0px 25px 40px;
+}
+
+button {
+  width: 200px;
+  margin-bottom: 15px;
+  padding: 12px 30px 12px 30px;
+  color: white;
+  font-weight: bold;
+  background-color: #596D48;
+  border-radius: 10px;
+  border: 0px;
+  cursor: pointer;
+}
+
+.green-text {
+  text-decoration: none;
+  font-weight: bold;
+  color: #596D48;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: 25vh;
+  }
+
+  .sidebar-banner {
+    margin-top: 10px;
+  }
+
+  .top-container,
+  .form-container,
+  .bottom-container {
+    padding: 25px;
+  }
+
+}

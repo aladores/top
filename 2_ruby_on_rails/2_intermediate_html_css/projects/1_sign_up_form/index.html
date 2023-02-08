@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Sign up form</title>
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="sidebar-banner">
+      <img src="images/odin-lined.png" alt="TOP Logo" class="odin-lined">
+      <span class="odin-word-logo">ODIN</span>
+    </div>
+    <div class="sidebar-footer">
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="top-container">
+      This is not a real online service. You know what you need something like this
+      in your life to help you realize your deepest dreams. Sign up now to get started.
+
+      <br><br>You know you want to.
+    </div>
+
+    <div class="form-container">
+      <h2>Let's do this!</h2>
+      <form action="#" id="sign-up">
+        <div class="form-row">
+          <div class="form-header-input">
+            <label for="first_name">FIRST NAME</label>
+            <input type="text" id="first_name" name="first_name" placeholder="John" required>
+          </div>
+
+          <div class="form-header-input">
+            <label for="last_name">LAST NAME</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Doe" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-header-input">
+            <label for="email">EMAIL</label>
+            <input type="text" id="email" name="email" placeholder="John@email.com" required>
+          </div>
+          <div class="form-header-input">
+            <label for="phone">PHONE NUMBER</label>
+            <input type="text" id="phone" name="phone" placeholder="555-555-5555" pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+              required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-header-input">
+            <label for="password">PASSWORD</label>
+            <p class="smaller-text">Must be atleast 8 characters.</p>
+            <input type="password" id="password" name="password" min="8" required>
+            <p id="error-text" class="small-text error-text"></p>
+          </div>
+          <div class="form-header-input">
+            <label for="phone">CONFIRM PASSWORD</label>
+            <p class="smaller-text">Must be atleast 8 characters.</p>
+            <input type="password" id="password-confirm" name="password-confirm" minlength="8" required>
+
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="bottom-container">
+      <button id="sign-up-button" type="submit" form="sign-up" value="Submit">
+        Create account
+      </button>
+      <br>
+      Already have an account? <a href="#" class="green-text">Log in</a>
+    </div>
+  </div>
+  <script src="scripts/scripts.js"></script>
+</body>
+
+</html>
