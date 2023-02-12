@@ -1,0 +1,24 @@
+*user
+username:string 
+email:string
+password:string 
+
+has_one profile
+
+*profile
+title:string
+city:string
+state:string
+country:string
+age:integer
+gender:string
+
+belongs_to user
+	
+*pins
+url:string
+
+belongs_to user
+has_many comments
+
+*message_board
