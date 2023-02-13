@@ -5,7 +5,7 @@ password:string  [6-16 chars, present]
  
 has_many posts
 
-*posts
+*post
 title:string
 body:text
 
@@ -14,4 +14,4 @@ belongs_to user
 *comments
 body:text
 belongs_to user
-belongs_to comments
+belongs_to post
