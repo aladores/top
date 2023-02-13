@@ -1,24 +1,17 @@
 *user
-username:string 
-email:string
-password:string 
+username:string [unique, 4-12 chars, present]
+email:string [unique, present]
+password:string  [6-16 chars, present]
+ 
+has_many posts
 
-has_one profile
-
-*profile
+*posts
 title:string
-city:string
-state:string
-country:string
-age:integer
-gender:string
+body:text
 
 belongs_to user
 	
-*pins
-url:string
-
+*comments
+body:text
 belongs_to user
-has_many comments
-
-*message_board
+belongs_to comments
