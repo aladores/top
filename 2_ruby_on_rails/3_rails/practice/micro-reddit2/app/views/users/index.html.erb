@@ -1,0 +1,7 @@
+<h1>User home page </h1>
+<%if logged_in?%>
+  Logged in as <%= current_user.username %><br>
+  <br>
+<%end%>
+<%= link_to "New User", "users/new" %>
+<%= link_to "Sign In", "sessions/new" %>
