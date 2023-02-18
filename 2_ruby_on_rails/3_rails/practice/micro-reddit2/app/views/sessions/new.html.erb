@@ -1,4 +1,7 @@
 <h1>Login page</h1>
+<% if flash[:error] %>
+  <%= flash[:error] %>
+<% end %>
 <%= form_for(:session, url:"#create") do |form| %>
   <div>
     <%= form.label :username %><br>
@@ -8,8 +11,7 @@
     <%= form.label :password %><br>
     <%= form.password_field :password %>
     <% if flash[:danger] %>
-      <div class="danger">
-        <%= flash[:danger] %></div>
+      <%= flash[:danger] %>
     <% end %>
   </div>
   <div>
