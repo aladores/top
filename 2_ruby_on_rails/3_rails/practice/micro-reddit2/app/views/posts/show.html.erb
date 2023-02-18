@@ -1,6 +1,6 @@
 <h1><%= @post.title %></h1>
 <%if logged_in?%>
-  <p>Created by: <%= @post.user_id%></p>
+  <p>Created by: <%= @post_username%></p>
 <%else%>
   <p>Created by: anon </p>
 <%end%>

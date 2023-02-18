@@ -7,8 +7,13 @@
   <div>
     <%= form.label :password %><br>
     <%= form.password_field :password %>
+    <% if flash[:danger] %>
+      <div class="danger">
+        <%= flash[:danger] %></div>
+    <% end %>
   </div>
   <div>
+    <br>
     <%= form.submit "Log in"%>
   </div>
 <% end %>
