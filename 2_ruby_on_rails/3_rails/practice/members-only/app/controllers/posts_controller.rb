@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :require_login, only: [:new, :create]
+
   def new
     @post = Post.new
   end
@@ -16,7 +18,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @post_username = User.find(current_user.id).username
+    @post_username = User.find(post.user_id).username
   end
 
   private
