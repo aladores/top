@@ -1,0 +1,16 @@
+<h1>User home page </h1>
+<ul>
+  <% @posts.each do |p| %>
+    <li>
+      <%= link_to p.title, p %>
+    </li>
+  <% end %>
+</ul>
+<% if current_user%>
+  <p>Logged in as <%= current_user.email%></p>
+  <%= link_to "New Post", "posts/new" %>
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete%>
+<%else%>
+  <%= link_to "New User",  new_user_registration_path%>
+  <%= link_to "Sign In", new_user_session_path %>
+<%end %>

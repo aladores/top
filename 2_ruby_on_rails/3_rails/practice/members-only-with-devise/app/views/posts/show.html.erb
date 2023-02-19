@@ -1,0 +1,7 @@
+<h1><%= @post.title %></h1>
+<%if current_user%>
+  <p>Created by: <%= @post_username%></p>
+<%else%>
+  <p>Created by: anon </p>
+<%end%>
+<p><%= @post.body %></p>
