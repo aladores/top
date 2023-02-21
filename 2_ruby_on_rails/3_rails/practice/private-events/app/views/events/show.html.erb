@@ -1,0 +1,7 @@
+<h1><%= @event.title %></h1>
+<%if current_user%>
+  <p>Created by: <%= @event.user_id%></p>
+<%else%>
+  <p>Created by: anon </p>
+<%end%>
+<p><%= @event.description %></p>

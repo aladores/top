@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag "styles" %>
+<div classs ="container">
+  <%= render "navbar" %>
+  <div class ="main-content">
+    <h2>Events</h2>
+    <ul>
+      <% @events.each do |event| %>
+        <li>
+          <%= link_to event.title, event %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
