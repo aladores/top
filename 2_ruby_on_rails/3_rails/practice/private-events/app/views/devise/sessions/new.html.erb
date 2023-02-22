@@ -1,13 +1,13 @@
-<div class="sign-in-page">
-  <div class ="sign-in-container">
-    <div class ="sign-in-left">
-      <h1 class="sign-in-left-header">Welcome back</h1>
+<div class="form-page">
+  <div class ="form-container">
+    <div class ="form-left">
+      <h1 class="form-left-header">Welcome back</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
       <div class="color-block"></div>
     </div>
-    <div class ="sign-in-right">
-      <div class="sign-in-right-header">
+    <div class ="form-right">
+      <div class="form-right-header">
         <h2 >Sign in</h2>
         <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
           <p style ="inline-block">New to event site?
@@ -17,13 +17,13 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
           <%= f.label :email, class:'small-text' %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'sign-in-field' %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-field  full-width'  %>
         </div>
         <div class="field">
           <%= f.label :password, class:'small-text' %><br />
-          <%= f.password_field :password, autocomplete: "current-password", class:'sign-in-field' %>
+          <%= f.password_field :password, autocomplete: "current-password", class:'form-field  full-width' %>
         </div>
-        <div class ="sign-in-right-bottom">
+        <div class ="form-right-bottom">
           <div>
             <% if devise_mapping.rememberable? %>
               <div class="field">
@@ -42,7 +42,7 @@
           <p class="small-text light-grey">By continuing past this page, you agree to the <%= link_to("Terms of use", target: '_blank')%>
             and understand that information will be used as described in our <%= link_to("Privacy Policy", target: '_blank')%>.</p>
           <div class="actions">
-            <%= f.submit "Sign in", class:'sign-in-button' %>
+            <%= f.submit "Sign in", class:'form-button' %>
           </div>
         <% end %>
       </div>

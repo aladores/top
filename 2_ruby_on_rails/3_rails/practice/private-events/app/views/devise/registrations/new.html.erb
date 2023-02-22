@@ -1,14 +1,14 @@
 <%= stylesheet_link_tag "styles" %>
-<div class="sign-in-page">
-  <div class = "sign-in-container">
-    <div class="sign-in-left">
-      <h1 class="sign-in-left-header">Your All-Access Pass</h1>
+<div class="form-page">
+  <div class = "form-container">
+    <div class="form-left">
+      <h1 class="form-left-header">Your All-Access Pass</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
       <div class="color-block"></div>
     </div>
-    <div class ="sign-in-right">
-      <div class ="sign-in-right-header">
+    <div class ="form-right">
+      <div class ="form-right-header">
         <h2> Sign Up</h2>
         <%- if controller_name != 'sessions' %>
           <p style ="inline-block">Already have an Event Site account?
@@ -19,25 +19,25 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
         <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'sign-in-field' %>
+          <%= f.label :email, class:'small-text'  %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-field full-width' %>
         </div>
         <div class="field">
-          <%= f.label :password %>
+          <%= f.label :password, class:'small-text'  %>
           <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <em class="small-text">(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password",class:'sign-in-field' %>
+          <%= f.password_field :password, autocomplete: "new-password",class:'form-field  full-width' %>
         </div>
         <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password",class:'sign-in-field' %>
+          <%= f.label :password_confirmation,class:'small-text'  %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password",class:'form-field  full-width' %>
         </div>
         <div>
           <p class="small-text light-grey">By continuing past this page, you agree to the <%= link_to("Terms of use", target: '_blank')%>
             and understand that information will be used as described in our <%= link_to("Privacy Policy", target: '_blank')%>.</p>
           <div class="actions">
-            <%= f.submit "Sign up", class:'sign-in-button' %>
+            <%= f.submit "Sign up", class:'form-button' %>
           </div>
         </div>
       <% end %>

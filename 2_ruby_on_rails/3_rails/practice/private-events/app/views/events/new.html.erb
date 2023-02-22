@@ -1,34 +1,44 @@
 <%= stylesheet_link_tag "styles" %>
 <div class = "container">
   <%= render "navbar" %>
-  <div class ="main-content">
-    <h1>New Event</h1>
-    <br>
-    <%= form_with model: @event do |form| %>
-      <div>
-        <%= form.label :title %><Br>
-        <%= form.text_field :title %>
-        <% @event.errors.full_messages_for(:title).each do |message| %>
-          <%= message %>
+  <div class ="event-page">
+    <div class = "event-container" >
+      <h1>New Event</h1>
+      <div class = "event-top">
+        <p> 1. Create the Event Title </p>
+        <p> 2. Set the description </p>
+        <p> 3. Set the date </p>
+      </div>
+      <div class = "event-bottom">
+        <h3 class ="event-bottom-header">What is the name of the event?</h3>
+        <%= form_with model: @event do |form| %>
+          <div class ="event-title">
+            <%= form.label :title %><Br>
+            <%= form.text_field :title, class:'form-field half-width'%>
+            <% @event.errors.full_messages_for(:title).each do |message| %>
+              <%= message %>
+            <% end %>
+          </div>
+          <div class ="event-description">
+            <%= form.label :description %><br>
+            <%= form.text_area :description,class:'form-field half-width' %>
+            <% @event.errors.full_messages_for(:description).each do |message| %>
+              <%= message %>
+            <% end %>
+          </div>
+          <div class ="event-date">
+            <%= form.label :event_date %><br>
+            <%= form.datetime_local_field  :event_date %>
+            <% @event.errors.full_messages_for(:event_date).each do |message| %>
+              <%= message %>
+            <% end %>
+          </div>
+          <div>
+            <%= form.submit "Continue", class:'form-button'%>
+          </div>
         <% end %>
       </div>
-      <div>
-        <%= form.label :description %><br>
-        <%= form.text_area :description %>
-        <% @event.errors.full_messages_for(:description).each do |message| %>
-          <%= message %>
-        <% end %>
-      </div>
-      <div>
-        <%= form.label :event_date %><br>
-        <%= form.datetime_local_field  :event_date %>
-        <% @event.errors.full_messages_for(:event_date).each do |message| %>
-          <%= message %>
-        <% end %>
-      </div>
-      <div>
-        <%= form.submit %>
-      </div>
-    <% end %>
+    </div>
   </div>
+</div>
 </div>

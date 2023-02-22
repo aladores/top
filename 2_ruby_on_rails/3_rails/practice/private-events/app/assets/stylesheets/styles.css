@@ -21,8 +21,11 @@ p {
 a,
 a:link,
 a:visited {
+    cursor: pointer;
     text-decoration: none;
 }
+
+
 
 ul {
     list-style-type: none;
@@ -45,6 +48,18 @@ ul {
     color: darkgrey
 }
 
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.large-field-height {
+    height: 200px;
+}
+
 /************ NAV BAR ************/
 .nav {
     display: flex;
@@ -55,6 +70,7 @@ ul {
     background-color: var(--darkblue);
 }
 
+.nav-right p,
 .nav-right a,
 .nav-left h1 {
     color: white;
@@ -72,39 +88,41 @@ ul {
     padding: 25px;
 }
 
-/************ SIGN IN PAGE ************/
+/************ FORM PAGE ************/
 
-.sign-in-page {
+.form-page {
     display: flex;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
 }
 
-.sign-in-container {
+.form-page a {
+    color: #145ca8;
+    font-weight: bold;
+}
+
+.form-container {
     display: grid;
     grid-template-columns: 1.25fr 2fr;
     max-width: 1000px;
 }
 
-.sign-in-page a {
-    color: #145ca8;
-    font-weight: bold;
-}
 
-/******** SIGN IN LEFT ********/
-.sign-in-left {
+
+/******** FORM LEFT ********/
+.form-left {
     background-color: #1F262D;
     padding: 25px;
     height: 700px;
 }
 
-.sign-in-left h1 {
+.form-left h1 {
     font-size: 2.8rem;
     color: #00FFFF
 }
 
-.sign-in-left p {
+.form-left p {
     color: white
 }
 
@@ -115,17 +133,17 @@ ul {
     width: 75px;
 }
 
-/******** SIGN IN RIGHT ********/
-.sign-in-right {
+/******** FORM RIGHT ********/
+.form-right {
     background-color: white;
     padding: 25px 50px 25px 50px;
 }
 
-.sign-in-right-header {
+.form-right-header {
     padding-bottom: 35px;
 }
 
-.sign-in-right-header h2 {
+.form-right-header h2 {
     padding-bottom: 15px;
 }
 
@@ -133,21 +151,20 @@ ul {
     padding-bottom: 10px;
 }
 
-.sign-in-field {
+.form-field {
     padding-left: 5px;
-    height: 25px;
     font-size: 1rem;
-    width: 100%;
 }
 
-.sign-in-right-bottom {
+.form-right-bottom {
     display: flex;
     padding-top: 25px;
     justify-content: space-between;
 }
 
-.sign-in-button {
+.form-button {
     border: none;
+    cursor: pointer;
     background-color: #145ca8;
     color: white;
     font-weight: bold;
@@ -158,18 +175,52 @@ ul {
 }
 
 @media only screen and (max-width: 800px) {
-    .sign-in-left {
+    .form-left {
         display: none;
     }
 
-    .sign-in-container {
+    .form-container {
         display: grid;
         grid-template-columns: 1fr;
         min-width: 500px;
         padding: 50px;
     }
 
-    .sign-in-button {
+    .form-button {
         width: 100%;
     }
+}
+
+
+/************ EVENT CONTENT ************/
+.event-page {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.event-container {
+    align-self: center;
+
+    min-width: 1000px;
+}
+
+.event-top {
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: var(--darkblue);
+    padding: 25px;
+    gap: 75px;
+}
+
+.event-bottom {
+    background-color: white;
+    min-height: 250px;
+    padding: 25px;
+}
+
+.event-bottom-header {
+    padding-bottom: 25px;
 }
