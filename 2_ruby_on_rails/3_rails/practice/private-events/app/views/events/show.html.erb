@@ -1,7 +1,17 @@
-<h1><%= @event.title %></h1>
-<%if current_user%>
-  <p>Created by: <%= @event.user_id%></p>
-<%else%>
-  <p>Created by: anon </p>
-<%end%>
-<p><%= @event.description %></p>
+<div class ="container">
+  <%= render "navbar" %>
+  <div class ="main-content">
+    <div class ="event-show-content">
+      <h1><%= @event.title %></h1>
+      <p><%= @event.event_date %></p>
+      <%if current_user%>
+        <p>Created by user: <%= @event.user_id%></p>
+        <br>
+      <%else%>
+        <p>Created by: anon </p>
+        <br>
+      <%end%>
+      <p><%= @event.description %></p>
+    </div>
+  </div>
+</div>

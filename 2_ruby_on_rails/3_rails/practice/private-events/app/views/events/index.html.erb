@@ -2,13 +2,23 @@
 <div classs ="container">
   <%= render "navbar" %>
   <div class ="main-content">
-    <h2>Events</h2>
-    <ul>
+    <h2>Current Events</h2>
+    <div class ="event-card-container">
       <% @events.each do |event| %>
-        <li>
-          <%= link_to event.title, event %>
-        </li>
+        <%= link_to event do %>
+          <div class ="event-card">
+            <div class="blue-end"></div>
+            <div class ="event-card-contents">
+              <h3><%= event.title %></h3>
+              <p><%= event.description.first(75)%></p>
+              <br>
+              <p><%= event.event_date%></p>
+              <br>
+            </div>
+          </div>
+        <% end %>
       <% end %>
-    </ul>
+    </div>
+    <h2>Attended Events</h2>
   </div>
 </div>

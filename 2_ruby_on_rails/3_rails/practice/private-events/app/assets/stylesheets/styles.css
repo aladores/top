@@ -1,6 +1,7 @@
 :root {
     --lightgrey: rgb(233, 233, 233);
     --darkblue: #252B35;
+    --lightblue: #145ca8;
 }
 
 body {
@@ -192,7 +193,7 @@ ul {
 }
 
 
-/************ EVENT CONTENT ************/
+/************ EVENT NEW CONTENT ************/
 .event-page {
     display: flex;
     flex-direction: column;
@@ -223,4 +224,43 @@ ul {
 
 .event-bottom-header {
     padding-bottom: 25px;
+}
+
+/************ EVENT INDEX CONTENT ************/
+.event-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 400px);
+    gap: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.event-card {
+    display: grid;
+    grid-template-columns: 1fr 40fr;
+    grid-template-rows: 3fr 1fr;
+
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    height: 175px;
+    width: 400px;
+}
+
+.event-card-contents {
+    padding: 25px;
+}
+
+
+.blue-end {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    grid-row: 1/3;
+    background-color: var(--lightblue)
+}
+
+/************ EVENT SHOW ***********/
+.event-show-content {
+    padding: 25px;
+    background-color: white;
 }
