@@ -2,6 +2,8 @@
 <div classs ="container">
   <%= render "navbar" %>
   <div class ="main-content">
+    <div class="notice"><%= flash[:notice] %></div>
+    <div class="alert"><%= flash[:alert] %></div>
     <h2>Current Events</h2>
     <div class ="event-card-container">
       <% @events.each do |event| %>
@@ -19,6 +21,23 @@
         <% end %>
       <% end %>
     </div>
-    <h2>Attended Events</h2>
+    <h2>Attending Events</h2>
+    <%= @events_new %>
+    <div class ="event-card-container">
+      <% @events_attending.each do |event| %>
+        <%= link_to "/events/#{event.id}" do %>
+          <div class ="event-card">
+            <div class="blue-end"></div>
+            <div class ="event-card-contents">
+              <h3><%= event.title %></h3>
+              <p><%= event.description.first(75)%></p>
+              <br>
+              <p><%= event.event_date%></p>
+              <br>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -1,9 +1,10 @@
+<%= stylesheet_link_tag "styles" %>
 <div class ="container">
   <%= render "navbar" %>
   <div class ="main-content">
     <div class ="event-show-content">
       <h1><%= @event.title %></h1>
-      <p><%= @event.event_date %></p>
+      <p>Date: <%= @event.event_date %></p>
       <%if current_user%>
         <p>Created by user: <%= @event.user_id%></p>
         <br>
@@ -12,6 +13,27 @@
         <br>
       <%end%>
       <p><%= @event.description %></p>
+      <br>
+      <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+      <% end %>
+      <h3>Attending users</h3>
+      <% @event.event_attendees.each do |event| %>
+        <p>User: <%= event.attendee_id%></p>
+      <%end%>
+      <% if user_signed_in? %>
+        <% if  @event.event_attendees.find_by(attendee_id: current_user.id)%>
+          <%= form_with url: "/event_attendees/#{@event.id}", method: :delete do |f| %>
+            <%= f.hidden_field :event_id, :value => @event.id %>
+            <%= f.submit "Unattend", class: "form-button" %>
+          <% end %>
+        <% else %>
+          <%= form_with url: "/event_attendees" do |f| %>
+            <%= f.hidden_field :event_id, :value => @event.id %>
+            <%= f.submit "Attend", class: "form-button" %>
+          <% end %>
+        <%end%>
+      <%end%>
     </div>
   </div>
 </div>

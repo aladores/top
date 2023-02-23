@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   #roots
   root "events#index"
 
-  resources :events
+  post "/event_attendees/:id", to: "event_attendees#create", as: "attend"
+  resources :events, :event_attendees
 end

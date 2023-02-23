@@ -3,6 +3,13 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    if EventAttendee.exists?(attendee_id: current_user.id)
+      @events_attending = []
+      @attending = EventAttendee.where(attendee_id: current_user.id).all
+      @attending.each do |e|
+        @events_attending.push(Event.find(e.event_id))
+      end
+    end
   end
 
   def new

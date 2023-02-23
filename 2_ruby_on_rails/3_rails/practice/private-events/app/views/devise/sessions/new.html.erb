@@ -9,6 +9,8 @@
     <div class ="form-right">
       <div class="form-right-header">
         <h2 >Sign in</h2>
+        <div class="notice"><%= flash[:notice] %></div>
+        <div class="alert"><%= flash[:alert] %></div>
         <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
           <p style ="inline-block">New to event site?
             <%= link_to "Sign up", new_registration_path(resource_name) %></p>

@@ -171,7 +171,6 @@ ul {
     font-weight: bold;
     height: 35px;
     width: 75px;
-    float: right;
     margin-top: 25px;
 }
 
@@ -263,4 +262,8 @@ ul {
 .event-show-content {
     padding: 25px;
     background-color: white;
+}
+
+.attend-button {
+    color: blue;
 }
