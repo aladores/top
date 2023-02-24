@@ -4,9 +4,6 @@ class EventAttendeesController < ApplicationController
     @event_attendee.attendee_id = current_user.id
     @event = @event_attendee.event_id
 
-    puts "*************"
-    puts @event_attendee.event_id
-    puts "*************"
     if @event_attendee.save
       flash[:notice] = "You are now attending this event!"
       redirect_to event_path(@event_attendee.event_id)
