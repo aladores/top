@@ -1,0 +1,28 @@
+<h1>Flights</h1>
+<%= form_with url: "/flights", method: :get do |form|%>
+  <div>
+    <%= form.label :departure_id,"Departure flight:" %>
+    <%= form.select(:departure_id, options_for_select(@airport_options))%>
+  </div>
+  <div>
+    <%= form.label :arrival_id,"Arrival flight" %>
+    <%= form.select(:arrival_id, options_for_select(@airport_options))%>
+  </div>
+  <div>
+    <%=  form.label :start,"Date" %>
+    <%= form.select(:start, options_for_select(@flight_start_options))%>
+  </div>
+  <div>
+    <%= form.label("Passengers") %>
+    <%= form.select(:passenger_count, options_for_select([1, 2, 3, 4], params[:passenger_count]))%>
+  </div>
+  <div>
+    <%= form.submit "Search", name:nil %>
+  </div>
+<%end%>
+<h2>Flight Results </h2>
+<% if @search_result_options%>
+  <%= render partial: 'flight_result_form'%>
+<%else%>
+  <p>Choose flight options to see the available flights.</p>
+<%end%>

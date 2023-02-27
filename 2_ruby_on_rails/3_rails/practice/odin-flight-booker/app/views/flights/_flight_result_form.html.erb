@@ -1,0 +1,9 @@
+<%= form_with url: new_booking_path, method: :get do |form|%>
+  <%= form.hidden_field :passenger_count, value: params[:passenger_count]%>
+  <div>
+    <%= form.collection_radio_buttons :flight_id, @search_result_options, :id, :flight_details%>
+  </div>
+  <div>
+    <%= form.submit "Submit", name:nil %>
+  </div>
+<%end%>

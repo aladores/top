@@ -1,0 +1,22 @@
+<H2>New booking</H2>
+<h3>Booking information</h3>
+<p>Flight Id: <%= @booking_flight_id%></p>
+<p>Passenger count: <%= @booking_passenger_count%></p>
+<p><%= @flight_booking.flight_details%></p>
+<h3>Passenger information</h3>
+<div>
+  <%= form_with(model:@booking, method: :post)do |form|%>
+    <%= form.hidden_field :flight_id, value: @flight_booking.id %>
+    <%= form.fields_for :passengers do |pf|%>
+      <h2>Passenger #<%= pf.index + 1 %></h2>
+      <%= pf.label :name %>
+      <%= pf.text_field :name %><br>
+      <%= pf.label :email %>
+      <%= pf.text_field :email %><br>
+    <% end %>
+    <div>
+      <br>
+      <%= form.submit "Submit", name:nil %>
+    </div>
+  <%end%>
+</div>

@@ -1,0 +1,14 @@
+<h1>Booking #<%=params[:id]%></h1>
+<h2>Flight Details</h2>
+<p>
+  <%= @booking.flight.flight_details %>
+</p>
+<% @booking.passengers.each_with_index do |p, index|%>
+  <h2>Passenger #<%= index + 1%> </h2>
+  <p>
+    <%= p.name %>
+  </p>
+  <p>
+    <%= p.email%>
+  </p>
+<% end %>
