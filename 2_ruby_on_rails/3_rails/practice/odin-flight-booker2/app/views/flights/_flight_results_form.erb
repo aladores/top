@@ -1,0 +1,19 @@
+<div class = "flight-results">
+  <%if @flight_search_results.empty?%>
+    <p>No flights are available for the options selected.</p>
+  <%else%>
+    <h3>Flight Results </h3>
+    <br>
+    <div>
+      <%= form_with  url:new_booking_path, method: :get do |form|%>
+        <%= form.hidden_field :passenger_count, value: params[:passenger_count]%>
+        <div>
+          <%= form.collection_radio_buttons :flight_id, @flight_search_results, :id, :flight_details%>
+        </div>
+        <div>
+          <%= form.submit "Submit", name:nil, class:"form-button" %>
+        </div>
+      </div>
+    <%end%>
+  <%end%>
+</div>

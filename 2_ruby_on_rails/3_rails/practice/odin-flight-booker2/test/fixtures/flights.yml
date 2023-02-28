@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  flight_date: 2023-02-27 20:01:42
+  flight_duration: 1.5
+  airport: one
+  airport: one
+
+two:
+  flight_date: 2023-02-27 20:01:42
+  flight_duration: 1.5
+  airport: two
+  airport: two

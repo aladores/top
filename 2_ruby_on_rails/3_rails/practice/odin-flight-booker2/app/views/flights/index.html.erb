@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag "styles" %>
+<div class = "container">
+  <%= render partial: "layouts/navbar" %>
+  <div class ="flight-page">
+    <div class="flight-container">
+      <div class = "flight-top">
+        <p class ="bold-text"> 1. Search for Flight Options </p>
+        <p> 2. Set booking information </p>
+        <p> 3. Final </p>
+      </div>
+      <div class ="flight-bottom">
+        <%= render partial: "flight_form"%>
+      </div>
+    </div>
+    <div class ="flight-results-container">
+      <% if @flight_search_results%>
+        <%= render partial: 'flight_results_form'%>
+      <%end%>
+    </div>
+  </div>
+</div>
+</div>

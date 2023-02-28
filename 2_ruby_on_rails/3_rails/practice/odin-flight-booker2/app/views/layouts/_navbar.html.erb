@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag "styles" %>
+<div class ="nav">
+  <div class ="nav-left">
+    <%= link_to root_path do %>
+      <h1>OFB</h1>
+    <%end%>
+  </div>
+  <div class = "nav-right">
+    <% if !user_signed_in?%>
+      <%= link_to "Sign In", new_user_session_path %>
+    <% else %>
+      <%= link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }%>
+      <p><%=current_user.email%></p>
+    <%end%>
+  </div>
+</div>

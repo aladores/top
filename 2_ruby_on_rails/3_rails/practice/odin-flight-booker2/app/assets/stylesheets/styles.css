@@ -1,0 +1,294 @@
+:root {
+    --lightgrey: rgb(233, 233, 233);
+    --darkgreen: #183805;
+    --lightgreen: #118d3b;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: rgb(233, 233, 233);
+}
+
+body,
+ul,
+img,
+h3,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a,
+a:link,
+a:visited {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+}
+
+.tiny-text {
+    font-size: 0.6rem;
+}
+
+.small-text {
+    font-size: 0.8rem;
+}
+
+.light-grey {
+    color: darkgrey
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.large-field-height {
+    height: 200px;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+/************ NAV BAR ************/
+.nav {
+    display: flex;
+    padding-left: 25px;
+    padding-right: 25px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--darkgreen);
+}
+
+.nav-right p,
+.nav-right a,
+.nav-left h1 {
+    color: white;
+    font-weight: bold;
+}
+
+.nav-right {
+    display: flex;
+    gap: 25px;
+}
+
+/************ MAIN CONTENT ************/
+.main-content {
+    background-color: var(--lightgrey);
+    padding: 25px;
+}
+
+/************ FORM PAGE ************/
+
+.form-page {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-page a {
+    color: #145ca8;
+    font-weight: bold;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1.25fr 2fr;
+    max-width: 1000px;
+}
+
+
+
+/******** FORM LEFT ********/
+.form-left {
+    background-color: #1F262D;
+    padding: 25px;
+    height: 700px;
+}
+
+.form-left h1 {
+    font-size: 2.8rem;
+    color: #00FFFF
+}
+
+.form-left p {
+    color: white
+}
+
+.color-block {
+    margin-top: 40px;
+    background-color: #00FFFF;
+    height: 4px;
+    width: 75px;
+}
+
+/******** FORM RIGHT ********/
+.form-right {
+    background-color: white;
+    padding: 25px 50px 25px 50px;
+}
+
+.form-right-header {
+    padding-bottom: 35px;
+}
+
+.form-right-header h2 {
+    padding-bottom: 15px;
+}
+
+.field {
+    padding-bottom: 10px;
+}
+
+.form-field {
+    padding-left: 5px;
+    font-size: 1rem;
+}
+
+.form-right-bottom {
+    display: flex;
+    padding-top: 25px;
+    justify-content: space-between;
+}
+
+.form-button {
+    border: none;
+    cursor: pointer;
+    background-color: var(--lightgreen);
+    color: white;
+    font-weight: bold;
+    height: 35px;
+    width: 75px;
+    margin-top: 25px;
+}
+
+@media only screen and (max-width: 800px) {
+    .form-left {
+        display: none;
+    }
+
+    .form-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        min-width: 500px;
+        padding: 50px;
+    }
+
+    .form-button {
+        width: 100%;
+    }
+}
+
+
+/************ flight NEW CONTENT ************/
+.flight-page {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.flight-container {
+    padding-top: 50px;
+    align-self: center;
+    min-width: 1000px;
+}
+
+.flight-top {
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: var(--darkgreen);
+    padding: 25px;
+    gap: 75px;
+}
+
+.flight-bottom {
+    background-color: white;
+    min-height: 250px;
+    padding: 25px;
+}
+
+.flight-bottom-header {
+    padding-bottom: 25px;
+}
+
+.flight-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.flight-results-container {
+    background-color: white;
+    margin-top: 50px;
+}
+
+.flight-results {
+    padding: 25px;
+}
+
+/************ flight INDEX CONTENT ************/
+.flight-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 400px);
+    gap: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.flight-card {
+    display: grid;
+    grid-template-columns: 1fr 40fr;
+    grid-template-rows: 3fr 1fr;
+
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    height: 175px;
+    width: 400px;
+}
+
+.flight-card-contents {
+    padding: 25px;
+}
+
+
+.blue-end {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    grid-row: 1/3;
+    background-color: var(--lightblue)
+}
+
+/************ flight SHOW ***********/
+.flight-show-content {
+    padding: 25px;
+    background-color: white;
+}
+
+.attend-button {
+    color: blue;
+}
+
+.booking-inputs {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
