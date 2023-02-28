@@ -1,0 +1,22 @@
+<Br>
+<% @booking_index.each_with_index do |b,index| %>
+  <div class ="booking-results">
+    <h4>Booking #<%= index + 1 %></h4>
+    <% @flight_index.each_with_index do |f,index| %>
+      <%if f.id == b.flight_id%>
+        <h4>Flight</h4>
+        <p>Departure Airport: <%= f.departure_airport.code %></p>
+        <p>Arrival Airport: <%= f.arrival_airport.code %></p>
+        <p>Flight date: <%= f.flight_date %></p>
+        <p>Flight duration: <%= f.flight_duration %> hours</p>
+      <% end %>
+    <% end %>
+    <% @passengers_index.each_with_index do |ps,index| %>
+      <%if ps.booking_id == b.id%>
+        <h4>Passenger #<%= index + 1 %></h4>
+        <p>Name: <%= ps.name%></p>
+        <p>Email: <%= ps.email%></p>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

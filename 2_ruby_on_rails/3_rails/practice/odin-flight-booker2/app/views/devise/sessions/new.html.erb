@@ -1,0 +1,38 @@
+<div class ="form-page">
+  <div class ="form-container">
+    <div class= "form-left">
+      <h1 class="form-left-header">Welcome back</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      <div class="color-block"></div>
+    </div>
+    <div class="form-right">
+      <div class="form-right-header">
+        <h2>Log in</h2>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-field  half-width' %>
+          </div>
+          <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "current-password", class:'form-field  half-width' %>
+          </div>
+          <% if devise_mapping.rememberable? %>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end %>
+          <p class="small-text light-grey">By continuing past this page, you agree to the <%= link_to("Terms of use", target: '_blank')%>
+            and understand that information will be used as described in our <%= link_to("Privacy Policy", target: '_blank')%>.</p>
+          <div class="actions">
+            <%= f.submit "Log in", class:"form-button" %>
+          </div>
+        <% end %>
+        <br>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

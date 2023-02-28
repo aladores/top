@@ -1,0 +1,13 @@
+<h3>Booking Confirmed</h3>
+<Br>
+<p>Departure Airport: <%= @flight_show.departure_airport.code %></p>
+<p>Arrival Airport: <%= @flight_show.arrival_airport.code %></p>
+<p>Flight date: <%= @flight_show.flight_date %></p>
+<p>Flight duration: <%= @flight_show.flight_duration %> hours</p>
+<br>
+<h3>Passenger information</h3>
+<% @passengers_show.each_with_index do |ps,index| %>
+  <h4>Passenger #<%= index + 1 %></h4>
+  <p>Name: <%= ps.name%></p>
+  <p>Email: <%= ps.email%></p>
+<% end %>

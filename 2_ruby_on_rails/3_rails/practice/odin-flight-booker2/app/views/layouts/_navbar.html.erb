@@ -10,6 +10,7 @@
       <%= link_to "Sign In", new_user_session_path %>
     <% else %>
       <%= link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }%>
+      <%= link_to "Bookings", bookings_path%>
       <p><%=current_user.email%></p>
     <%end%>
   </div>
