@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+<h2>Id: <%=@kitten.id%></h2>
+<p>Name: <%=@kitten.name%></p>
+<p>Cuteness: <%=@kitten.cuteness%></p>
+<p>Softness<%=@kitten.softness%></p>
+<div>
+  <%= link_to "Edit this kitten", edit_kitten_path(@kitten) %> |
+  <%= link_to "Back to kittens", kittens_path %>
+  <%= button_to "Destroy this kitten", @kitten, method: :delete %>
+</div>
