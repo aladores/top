@@ -1,0 +1,19 @@
+<h1>Home page</h1>
+<%= form_with url:"/static_pages/", method: :get do |form| %>
+  <div>
+    <%= form.label :user_id %><br>
+    <%= form.text_field :user_id %>
+    <div>
+      <%= form.submit "Submit" %>
+    </div>
+  <% end %>
+  <h2>Photos</h2>
+  <%if @photos.nil?%>
+    <p>No photos loaded</p>
+  <%else%>
+    <div>
+      <% @photos.each do |p|%>
+        <%= image_tag Flickr.url_q(p)%>
+      <%end%>
+    </div>
+  <%end%>
