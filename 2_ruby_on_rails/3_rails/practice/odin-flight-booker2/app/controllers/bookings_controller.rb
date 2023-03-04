@@ -27,6 +27,10 @@ class BookingsController < ApplicationController
     if current_user.id == @booking_show.user_id
       @flight_show = Flight.find(@booking_show.flight_id)
       @passengers_show = Passenger.where(booking_id: @booking_show.id)
+
+      @passengers_show.each do |passenger|
+        PassengerMailer.with(booking: @booking_show, flight: @flight_show, passenger: passenger).confirmation_email.deliver_later
+      end
     else
       flash[:notice] = "Invalid user cannot access requested booking."
       redirect_to root_path

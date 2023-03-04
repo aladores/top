@@ -1,0 +1,13 @@
+Booking Confirmation 
+=====================================
+You have succesfully booked <%=@booking_info.id%>
+=====================================
+Flight Information
+=====================================
+Departure Airport: <%= @flight_info.departure_airport.code %>
+Arrival Airport: <%= @flight_info.arrival_airport.code %>
+Flight date: <%= @flight_info.flight_date %>
+Flight duration: <%= @flight_info.flight_duration %> hours
+=====================================
+Passenger Information
+Name: <%= @passenger.name%>

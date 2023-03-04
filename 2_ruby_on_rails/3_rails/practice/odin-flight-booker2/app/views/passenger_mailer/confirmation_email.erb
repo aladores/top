@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Booking confirmation</h1>
+    <p>Departure Airport: <%= @flight_info.departure_airport.code %></p>
+    <p>Arrival Airport: <%= @flight_info.arrival_airport.code %></p>
+    <p>Flight date: <%= @flight_info.flight_date %></p>
+    <p>Flight duration: <%= @flight_info.flight_duration %> hours</p>
+    <br>
+    <p>
+      For: <%= @passenger.name%>
+    </p>
+  </body>
+</html>
