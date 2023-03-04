@@ -221,7 +221,7 @@ ul {
 
 .flight-bottom {
     background-color: white;
-    min-height: 250px;
+    min-height: 400px;
     padding: 25px;
 }
 
@@ -303,4 +303,22 @@ ul {
     background-color: white;
     margin-top: 25px;
     padding: 1px 25px 25px 25px;
+}
+
+.add-passenger-button {
+    background-color: var(--lightgreen);
+    color: white;
+    border: none;
+}
+
+.passenger-row {
+    display: flex;
+    align-content: center;
+    gap: 5px;
+}
+
+.button-right {
+    margin-top: -50px;
+    margin-right: 25px;
+    float: right;
 }

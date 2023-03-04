@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @passenger_count = params[:passenger_count]
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
 

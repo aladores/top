@@ -5,19 +5,38 @@
 <p>Flight date: <%= @flight.flight_date %></p>
 <p>Flight duration: <%= @flight.flight_duration %> hours</p>
 <br>
-<p>Passenger count: <%=@passenger_count%></p>
-<Br>
-<h3>Passenger information</h3>
-<%= form_with(model:@booking, method: :post) do |form|%>
-  <%= form.hidden_field :flight_id, value: @flight_id %>
-  <%= form.fields_for :passengers do |pf|%>
-    <h4>Passenger #<%= pf.index + 1 %></h4>
-    <div class = "booking-inputs">
-      <%= pf.label :name %>
-      <%= pf.text_field :name %><br>
-      <%= pf.label :email %>
-      <%= pf.text_field :email %><br>
-    </div>
-  <% end %>
-  <%= form.submit "Submit", name:nil, class:'form-button' %>
+<div data-controller="passenger">
+  <div class ="passenger-row">
+    <p>Passenger count: 
+      <div data-passenger-target="count"><%=@passenger_count%></div>
+    </p>
+    <button data-action="click->passenger#add" class="add-passenger-button">+</button>
+    <Br>
+  </div>
+  <br>
+  <h3>Passenger information</h3>
+  <%= form_with(model:@booking, method: :post) do |form|%>
+    <%= form.hidden_field :flight_id, value: @flight_id %>
+    <%= form.fields_for :passengers do |pf|%>
+      <h4>Passenger # <%= pf.index + 1 %></h4>
+      <div data-passenger-target="form_body" class = "booking-inputs" id = "form_body">
+        <%= pf.label :name %>
+        <%= pf.text_field :name %><br>
+        <%= pf.label :email %>
+        <%= pf.text_field :email %><br>
+        <template data-passenger-target="details" id="details">
+          <h4 >Passenger #
+            <div id="count_header" data-passenger-target="count_header" style="display:inline"><%= pf.index + 1 %></div>
+          </h4>
+          <%= pf.label :name %>
+          <%= pf.text_field :name %><br>
+          <%= pf.label :email %>
+          <%= pf.text_field :email %><br>
+        </template>
+      </div>
+    <%end%>
+  </div>
+</div>
+<%= form.submit "Submit", name:nil, class:'form-button button-right' %>
 <%end%>
+</div>
