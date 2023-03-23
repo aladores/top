@@ -1,17 +1,21 @@
-.form_section {
-  display:flex;
-  flex-direction: column;
-  max-width:300px;
+.form_row {
+  display: inline-block;
 }
 
-.library_row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
+.form_section {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
 }
-.book_card{
+
+.library_row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.book_card {
   border-radius: 5px;
-  padding:5px 5px 5px 15px;
+  padding: 5px 5px 5px 15px;
   background-color: grey;
-  width:200px;
+  width: 200px;
 }
