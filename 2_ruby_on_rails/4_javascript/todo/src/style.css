@@ -1,0 +1,74 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: grey;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 1024px;
+}
+
+/********** Add Section *********/
+.project-row {
+  display: flex;
+  gap: 15px;
+  padding: 25px;
+}
+
+#project-form {
+  display: none;
+}
+
+.tasks-row {
+  display: none;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 25px;
+}
+/********** View Section *********/
+.view-project-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px;
+  background-color: rgb(193, 195, 196);
+}
+
+.view-tasks-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px;
+  background-color: rgb(193, 195, 196);
+}
+
+.project-card {
+  padding: 10px;
+  background-color: rgb(90, 90, 90);
+  cursor: pointer;
+}
+
+#view-tasks-list {
+  display: none;
+}
+
+.task-form {
+}
+
+.task-name,
+.task-description {
+  width: 100%;
+}
+
+.priority-row {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 500px) {
+  .priority-row {
+    display: block;
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To do</title>
+</head>
+
+<body>
+  <main class="main-container">
+    <section class="add-section">
+      <div id="project-row" class="project-row">
+        <button id="add-project">+ Project</button>
+        <form action="" id="project-form">
+          <label for="title">Project: </label>
+          <input type="text" id="project-name" name="project" value="test-project">
+        </form>
+      </div>
+      <div id="tasks-row" class="tasks-row">
+        <button id="back-project-list">Projects</button>
+        <button id="add-tasks">+ Tasks</button>
+      </div>
+    </section>
+    <section id="view-project-list" class="view-project-section">
+    </section>
+    <section id="view-tasks-list" class="view-tasks-section">
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
+
+</html>
