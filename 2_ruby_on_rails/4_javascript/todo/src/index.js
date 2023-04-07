@@ -9,7 +9,6 @@ function screenController() {
   let dom = DomController();
   let toDo = ToDo();
   let currentProjectId = 0;
-  let currentTaskId = 0;
   //Project view
   const addProjectButton = document.getElementById("add-project");
   const viewProjectList = document.getElementById("view-project-list");
@@ -33,6 +32,7 @@ function screenController() {
     dom.updateProjectView(toDo, viewProjectList);
     currentProjectId++;
     addClickToProjectCard();
+
   }
 
   function addClickToProjectCard() {
@@ -49,11 +49,28 @@ function screenController() {
     }
   }
 
+  function goBackToProjectView() {
+    let projectObject = document.getElementsByClassName("project-title");
+    let projectId = (projectObject[0].id).slice(-1);
+    let project = toDo.getProjectWithId(projectId);
+
+    let taskRows = document.getElementsByClassName("task-row");
+
+    for (let i = taskRows.length - 1; i >= 0; i--) {
+      if (taskRows[i].classList.contains("line-through")) {
+        project.removeTaskWithIndex(i);
+      }
+    }
+    showProjectState();
+    hideTasksState();
+  }
   function goToTaskView(project) {
     let taskList = document.getElementById("project-task-list");
     hideProjectState();
     showTasksState();
-    dom.updateTaskView(project, taskList);
+    dom.updateTaskView(project, taskList)
+    removeTask(project, taskList.children);
+    showAddTasksButton();
   }
 
   function addTask() {
@@ -71,12 +88,34 @@ function screenController() {
       let taskDescription = document.getElementById("task-description");
       let taskDueDate = document.getElementById("task-due-date");
       let taskPriority = document.getElementById("task-priority");
-      console.log(taskPriority.value);
+      //console.log(taskPriority.value);
       const newTask = Task(taskName.value, taskDescription.value, taskDueDate.value.replace('T', ' '), taskPriority.value);
+
       project.addTask(newTask);
-      dom.updateTaskView(project, taskList);
+      let taskCards = dom.updateTaskView(project, taskList);
+      removeTask(project, taskCards);
       showAddTasksButton();
     });
+  }
+
+  function removeTask(project, taskCards) {
+    for (let i = 0; i < taskCards.length; i++) {
+      let checkbox = document.getElementById(`isFinished-${i}`);
+      checkbox.addEventListener('change', () => {
+        let x = i;
+        let task = project.getTasksWithId(i);
+
+        task.toggleIsFinished();
+        toggleUnderline(taskCards[i]);
+
+      })
+    }
+  }
+
+  function toggleUnderline(taskCard) {
+    taskCard.classList.contains("line-through")
+      ? taskCard.classList.remove("line-through")
+      : taskCard.classList.add("line-through");
   }
 
   function setStaticListeners() {
@@ -86,18 +125,18 @@ function screenController() {
       addProject(newProject);
       hideProjectForm();
     });
+
     backProjectButton.addEventListener('click', () => {
-      showProjectState();
-      hideTasksState();
+      goBackToProjectView()
     });
 
     addProjectButton.addEventListener('click', showProjectForm);
 
-
-    const addTaskHandler = (e) => {
-      addTask();
-    }
-    addTasksButton.addEventListener('click', addTaskHandler);
+    /*     const addTaskHandler = () => {
+          addTask();
+        }
+     */
+    addTasksButton.addEventListener('click', addTask);
   }
 
   //Project view

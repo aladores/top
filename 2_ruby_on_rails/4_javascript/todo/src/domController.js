@@ -30,7 +30,7 @@ export const DomController = () => {
     todayDate.setHours(todayDate.getHours() - 3);
 
     const formattedDate = todayDate.toISOString().slice(0, 16).replace('T', ' ');
-    console.log(todayDate.toISOString());
+    //console.log(todayDate.toISOString());
     let taskForm = document.createElement("form");
     taskForm.innerHTML =
       `<form action="" id="task-form" class="task-form">
@@ -51,19 +51,41 @@ export const DomController = () => {
     return taskForm;
   }
   function updateTaskView(project, parent) {
+    let taskCards = [];
     parent.innerHTML = "";
     const projectTasks = project.getTaskList();
-    //console.log(projectTasks.length);
+
     for (let i = 0; i < projectTasks.length; i++) {
-      console.log(projectTasks[i]);
+      //console.log(projectTasks[i]);
+      let task = project.getTasksWithId(i);
+
       let taskElement = document.createElement('div');
-      taskElement.setAttribute('id', `${projectTasks[i]["title"]}-task-list`);
-      taskElement.classList = `tasks-list`;
+      //taskElement.setAttribute('id', `project-task-list`);
+      //taskElement.setAttribute('id', `${projectTasks[i]["title"]}-task-list`);
+      taskElement.setAttribute('id', `task-id-${i}`);
+      taskElement.classList.add("task-row");
       taskElement.innerHTML =
-        `<p>${projectTasks[i]["name"]}</p>
-          <p>${projectTasks[i]["description"]}</p>`;
+        `<input id="isFinished-${i}" class="task-checkbox" type="checkbox" />
+        <div class="task-info">
+          <p class="task-name">${projectTasks[i]["name"]}</p>
+          <p class="task-description">${projectTasks[i]["description"]}</p>
+          <div class="task-date-priority-row">
+            <p>Date: ${projectTasks[i]["dueDate"]}</p>
+            <p>Priority: ${projectTasks[i]["priority"]}</p>
+          </div>
+        </div >`;
+
+      taskCards.push(taskElement);
       parent.appendChild(taskElement);
+
+      if (task.getIsFinished()) {
+        let checkbox = document.getElementById(`isFinished-${i}`);
+        checkbox.checked = true;
+        taskElement.classList.add("line-through");
+      }
+
     }
+    return taskCards;
   }
 
 

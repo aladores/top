@@ -1,3 +1,8 @@
+p,
+h1 {
+  padding: 0px;
+  margin: 0px;
+}
 body {
   display: flex;
   justify-content: center;
@@ -55,7 +60,10 @@ body {
   display: none;
 }
 
-.task-form {
+#project-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .task-name,
@@ -67,6 +75,31 @@ body {
   display: inline-block;
 }
 
+.task-row {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+}
+.task-name {
+  font-size: 1.1rem;
+}
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+}
+.task-date-priority-row {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.line-through {
+  text-decoration: line-through;
+}
 @media only screen and (max-width: 500px) {
   .priority-row {
     display: block;
