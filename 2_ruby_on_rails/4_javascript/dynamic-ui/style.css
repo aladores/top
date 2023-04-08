@@ -1,3 +1,73 @@
 body {
-  color: red;
+  display: flex;
+
+  justify-content: center;
+  color: white;
+  background-color: rgb(37, 37, 37);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 1000px;
+}
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-size: 1.2rem;
+  gap: 15px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: blue;
+}
+.dropdown-content {
+  display: none;
+  gap: 15px;
+  flex-direction: column;
+  position: absolute;
+}
+
+.show {
+  display: flex;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.slideshow-buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+.slideshow-button {
+  color: white;
+  z-index: 1;
+}
+
+.right-button {
+  text-align: right;
+}
+
+.hide {
+  display: none;
+}
+
+.show-slide {
+  display: block;
+}
+
+.slide-card {
+  display: none;
 }
