@@ -81,14 +81,12 @@ async function handleRadioClick() {
 }
 
 async function getWeatherLocation(searchText) {
-  const apiKey = "3e4c0425ed126619450a35bb06e00163";
   const locationResponse = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchText}&limit=5&appid=${apiKey}`);
   const locationResult = await locationResponse.json();
   return locationResult;
 }
 
 async function getWeather(lat, lon) {
-  const apiKey = "3e4c0425ed126619450a35bb06e00163";
 
   const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`);
   const weatherResult = await weatherResponse.json();
