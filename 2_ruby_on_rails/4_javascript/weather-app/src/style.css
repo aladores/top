@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(201, 201, 201);
+}
+
+.main-container {
+  width: 1024px;
+}
+
+.header-container {
+  background-color: lightblue;
+}
+
+.results-container {
+  background-color: lightcoral;
+}
