@@ -12,17 +12,25 @@
 <body>
   <div class="main-container">
     <header class="header-container">
-      <h1>Weather</h1>
+      <div class="header-row">
+        <h1 class="header-text">Weather</h1>
+        <div class="unit-switch">
+          <input type="checkbox" id="units-toggle" class="toggle" />
+          <label for="units-toggle"></label>
+        </div>
+      </div>
       <form id="search-form">
         <label for="search-text"></label>
-        <input type="text" id="search-text" name="search-text">
-        <input type="submit">
+        <div class="search-row">
+          <input type="text" id="search-text" name="search-text" class="search-bar" placeholder="Search for a city">
+
+        </div>
       </form>
     </header>
     <main class="results-container">
-      <section id="city-results" class="results-section">
+      <section id="city-results" class="city-results">
       </section>
-      <section id="weather-results" class="results-section">
+      <section id="weather-results" class="weather-results">
       </section>
     </main>
   </div>
