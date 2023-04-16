@@ -1,0 +1,12 @@
+.Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 25px;
+}
+
+.social-links {
+  border-radius: 5px;
+  width: 40px;
+}

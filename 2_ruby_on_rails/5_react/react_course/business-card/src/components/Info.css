@@ -1,0 +1,68 @@
+.Info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.profile-picture {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.header-name {
+  padding-top: 10px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.website-link {
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.website-link:visited {
+  color: grey;
+  text-decoration: none;
+}
+.website-link:visited {
+  color: grey;
+  text-decoration: none;
+}
+
+.button-row {
+  display: flex;
+  gap: 40px;
+  padding-top: 15px;
+}
+
+.button-row > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 5px;
+  width: 120px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.email-icon {
+  width: 20px;
+}
+
+.linkedin-icon {
+  width: 15px;
+}
+.email-button {
+  color: black;
+  background-color: white;
+}
+
+.linkedin-button {
+  color: white;
+  background: #4684dc;
+}
