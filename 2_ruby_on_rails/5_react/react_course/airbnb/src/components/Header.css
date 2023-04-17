@@ -1,0 +1,55 @@
+img {
+  padding: 0px;
+  margin: 0px;
+}
+.Header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.image-card {
+  aspect-ratio: 0.7;
+  width: 100%;
+  max-width: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  gap: 1.2rem;
+}
+
+.image-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.image-column-3 {
+  translate: 0px 60px;
+}
+.image-column-5 {
+  translate: 0px 40px;
+}
+
+.header-text {
+  padding-top: 80px;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .image-container {
+    gap: 0.5rem;
+  }
+
+  .image-column {
+    gap: 0.5rem;
+  }
+}

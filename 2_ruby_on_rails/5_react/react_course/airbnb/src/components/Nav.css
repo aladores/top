@@ -1,0 +1,38 @@
+.Nav-container {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgb(205, 205, 205);
+}
+.Nav {
+  display: flex;
+  align-items: center;
+  height: 90px;
+  width: 1000px;
+  padding-left: 25px;
+  text-decoration: none;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+.logo-link:visited {
+  text-decoration: none;
+}
+
+.logo {
+  height: 45px;
+}
+
+.logo-text {
+  font-size: 1.6rem;
+  color: #ff5a5f;
+}
+
+@media only screen and (max-width: 1000px) {
+  .Nav {
+    width: 100%;
+  }
+}
