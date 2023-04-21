@@ -1,0 +1,9 @@
+node_modules/
+postgres-test/
+stimulus-test/
+giphy-api/
+jest-test/
+props-vanilla-js/
+webpack-demo/
+react_course/
+my-app/
