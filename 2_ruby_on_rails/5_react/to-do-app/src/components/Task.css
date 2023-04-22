@@ -1,0 +1,47 @@
+.Task {
+  font-size: 1.2rem;
+  padding: 15px;
+  align-items: center;
+  height: 50px;
+  color: black;
+  background-color: #b9b9be;
+  border-radius: 10px;
+}
+
+.task-row {
+  display: flex;
+  justify-content: space-between;
+}
+.task-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.task-actions > Button {
+  font-size: 1.05rem;
+  cursor: pointer;
+  background-color: #bbd6d6;
+  height: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  border: 0px;
+}
+
+.submit-button {
+  font-size: 1.05rem;
+  cursor: pointer;
+  background-color: #bbd6d6;
+  border: 0px;
+  border-radius: 5px;
+  width: 40px;
+}
+
+.edit-input {
+  padding-left: 5px;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  height: 35px;
+  width: 100%;
+  border-radius: 10px;
+}
